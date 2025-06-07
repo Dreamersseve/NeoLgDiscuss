@@ -200,7 +200,9 @@ using namespace std;
         }
 
         // Decode base64 message and process it
+        //cout<<root["message"].asString()<<endl;
         string decodedMsg = Base64::base64_decode(root["message"].asString());
+
         if (decodedMsg.empty()) {
             res.status = 400;
             res.set_content("Message content is empty", "text/plain");
